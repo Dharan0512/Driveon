@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A0A0A"
+    android:background="@color/bg"
     android:fillViewport="true">
 
     <LinearLayout
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#151515"
+            android:background="@color/surface"
             android:padding="18dp">
 
             <ImageView
@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Loading Name"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/text_primary"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -51,7 +51,7 @@
                     android:src="@drawable/ic_edit"
                     android:clickable="true"
                     android:focusable="true"
-                    app:tint="#FDD104" />
+                    app:tint="@color/brand" />
             </LinearLayout>
 
             <TextView
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Loading EMail ID"
-                android:textColor="#AAAAAA"
+                android:textColor="@color/text_secondary"
                 android:layout_gravity="center" />
 
             <TextView
@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Loading Contact"
-                android:textColor="#AAAAAA"
+                android:textColor="@color/text_secondary"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp" />
 
@@ -83,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0% Complete"
-                android:textColor="#00FFB3"
+                android:textColor="@color/success"
                 android:layout_gravity="center"
                 android:layout_marginTop="6dp" />
 
@@ -94,8 +94,8 @@
                 android:text="SUBMIT KYC"
                 android:textStyle="bold"
                 android:visibility="gone"
-                android:backgroundTint="#FDD104"
-                android:textColor="#000000"
+                android:backgroundTint="@color/brand"
+                android:textColor="@color/on_brand"
                 android:layout_marginTop="16dp"/>
 
         </LinearLayout>
@@ -117,7 +117,7 @@
                 android:layout_marginBottom="12dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#FFFFFF"/>
+                android:textColor="@color/text_primary"/>
 
             <TextView
                 android:id="@+id/txtKycStatus"
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:text="Pending"
                 android:textStyle="bold"
-                android:textColor="#FDD104"/>
+                android:textColor="@color/brand"/>
 
         </LinearLayout>
 
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="14dp"
-            android:background="#FDD104"
+            android:background="@color/brand"
             android:layout_marginBottom="12dp"
             android:elevation="6dp">
 
@@ -149,7 +149,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Driving License Front"
-                    android:textColor="#111111"
+                    android:textColor="@color/on_brand"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -160,12 +160,12 @@
                     android:text="PENDING"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
-                    android:background="#CC000000" />
+                    android:background="@color/ink" />
             </LinearLayout>
 
             <TextView
@@ -173,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload clear front side of your driving license"
                 android:textSize="12sp"
-                android:textColor="#333333"
+                android:textColor="@color/on_brand_muted"
                 android:layout_marginTop="6dp" />
 
             <Button
@@ -183,8 +183,8 @@
                 android:text="Upload / View"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#111111"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="@color/ink"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -193,7 +193,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="14dp"
-            android:background="#FDD104"
+            android:background="@color/brand"
             android:layout_marginBottom="12dp"
             android:elevation="6dp">
 
@@ -208,7 +208,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Driving License Back"
-                    android:textColor="#111111"
+                    android:textColor="@color/on_brand"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -219,12 +219,12 @@
                     android:text="PENDING"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
-                    android:background="#CC000000" />
+                    android:background="@color/ink" />
             </LinearLayout>
 
             <TextView
@@ -232,7 +232,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload clear back side of your driving license"
                 android:textSize="12sp"
-                android:textColor="#333333"
+                android:textColor="@color/on_brand_muted"
                 android:layout_marginTop="6dp" />
 
             <Button
@@ -242,8 +242,8 @@
                 android:text="Upload / View"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#111111"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="@color/ink"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -251,7 +251,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#FDD104"
+            android:background="@color/brand"
             android:padding="14dp"
             android:elevation="6dp"
             android:layout_marginBottom="12dp">
@@ -267,7 +267,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Aadhaar Front"
-                    android:textColor="#111111"
+                    android:textColor="@color/on_brand"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -278,12 +278,12 @@
                     android:text="PENDING"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
-                    android:background="#CC000000" />
+                    android:background="@color/ink" />
             </LinearLayout>
 
             <TextView
@@ -291,7 +291,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload clear front side of your Aadhaar card"
                 android:textSize="12sp"
-                android:textColor="#333333"
+                android:textColor="@color/on_brand_muted"
                 android:layout_marginTop="6dp" />
 
             <Button
@@ -301,8 +301,8 @@
                 android:text="Upload / View"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#111111"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="@color/ink"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -310,7 +310,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#FDD104"
+            android:background="@color/brand"
             android:padding="14dp"
             android:elevation="6dp"
             android:layout_marginBottom="12dp">
@@ -326,7 +326,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Aadhaar Back"
-                    android:textColor="#111111"
+                    android:textColor="@color/on_brand"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -337,12 +337,12 @@
                     android:text="PENDING"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
-                    android:background="#CC000000" />
+                    android:background="@color/ink" />
             </LinearLayout>
 
             <TextView
@@ -350,7 +350,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload clear back side of your Aadhaar card"
                 android:textSize="12sp"
-                android:textColor="#333333"
+                android:textColor="@color/on_brand_muted"
                 android:layout_marginTop="6dp" />
 
             <Button
@@ -360,8 +360,8 @@
                 android:text="Upload / View"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#111111"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="@color/ink"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -370,7 +370,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="14dp"
-            android:background="#FDD104"
+            android:background="@color/brand"
             android:elevation="6dp"
             android:layout_marginBottom="12dp">
 
@@ -385,7 +385,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Work / Business Proof"
-                    android:textColor="#111111"
+                    android:textColor="@color/on_brand"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -396,12 +396,12 @@
                     android:text="PENDING"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
-                    android:background="#CC000000" />
+                    android:background="@color/ink" />
             </LinearLayout>
 
             <TextView
@@ -409,7 +409,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload your work ID / business proof / college ID"
                 android:textSize="12sp"
-                android:textColor="#333333"
+                android:textColor="@color/on_brand_muted"
                 android:layout_marginTop="6dp" />
 
             <Button
@@ -419,8 +419,8 @@
                 android:text="Upload / View"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#111111"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="@color/ink"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -429,7 +429,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="14dp"
-            android:background="#FDD104"
+            android:background="@color/brand"
             android:elevation="6dp"
             android:layout_marginBottom="12dp">
 
@@ -444,7 +444,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Work / Business Proof Back"
-                    android:textColor="#111111"
+                    android:textColor="@color/on_brand"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -455,12 +455,12 @@
                     android:text="PENDING"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
-                    android:background="#CC000000" />
+                    android:background="@color/ink" />
             </LinearLayout>
 
             <TextView
@@ -468,7 +468,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload back side of work or business proof"
                 android:textSize="12sp"
-                android:textColor="#333333"
+                android:textColor="@color/on_brand_muted"
                 android:layout_marginTop="6dp" />
 
             <Button
@@ -478,8 +478,8 @@
                 android:text="Upload / View"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#111111"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="@color/ink"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -488,7 +488,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="14dp"
-            android:background="#FDD104"
+            android:background="@color/brand"
             android:elevation="6dp"
             android:layout_marginBottom="12dp">
 
@@ -503,7 +503,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Address Proof"
-                    android:textColor="#111111"
+                    android:textColor="@color/on_brand"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -514,12 +514,12 @@
                     android:text="PENDING"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
-                    android:background="#CC000000" />
+                    android:background="@color/ink" />
             </LinearLayout>
 
             <TextView
@@ -527,7 +527,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload your address proof (Aadhaar / Utility Bill / Rental Agreement)"
                 android:textSize="12sp"
-                android:textColor="#333333"
+                android:textColor="@color/on_brand_muted"
                 android:layout_marginTop="6dp" />
 
             <Button
@@ -537,8 +537,8 @@
                 android:text="Upload / View"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#111111"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="@color/ink"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -550,7 +550,7 @@
             android:padding="12dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="12dp"
-            android:background="#FDD104"
+            android:background="@color/brand"
             android:clickable="true"
             android:focusable="true">
 
@@ -567,7 +567,7 @@
                     android:layout_weight="1"
                     android:layout_marginStart="10dp"
                     android:text="Emergency Contacts"
-                    android:textColor="#111111"
+                    android:textColor="@color/on_brand"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -583,7 +583,7 @@
                 android:layout_height="wrap_content"
                 android:text="Select up to 3 emergency contacts"
                 android:textSize="12sp"
-                android:textColor="#222222"
+                android:textColor="@color/on_brand_muted"
                 android:layout_marginTop="6dp" />
 
         </LinearLayout>
@@ -593,7 +593,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="14dp"
-            android:background="#FDD104"
+            android:background="@color/brand"
             android:elevation="6dp"
             android:layout_marginBottom="12dp">
 
@@ -608,7 +608,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Other Document"
-                    android:textColor="#111111"
+                    android:textColor="@color/on_brand"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -619,12 +619,12 @@
                     android:text="PENDING"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
-                    android:background="#CC000000" />
+                    android:background="@color/ink" />
             </LinearLayout>
 
             <TextView
@@ -632,7 +632,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload any additional supporting document"
                 android:textSize="12sp"
-                android:textColor="#333333"
+                android:textColor="@color/on_brand_muted"
                 android:layout_marginTop="6dp" />
 
             <Button
@@ -642,8 +642,8 @@
                 android:text="Upload / View"
                 android:textStyle="bold"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#111111"
-                android:textColor="#FFFFFF" />
+                android:backgroundTint="@color/ink"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

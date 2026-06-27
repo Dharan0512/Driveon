@@ -26,6 +26,9 @@ class VehicleAddAndCheckActivity : AppCompatActivity() {
         tvVehicleCount =
             findViewById(R.id.tvVehicleCount)
 
+        findViewById<ImageView>(R.id.btnBack)
+            .setOnClickListener { finish() }
+
         database =
             FirebaseDatabase.getInstance()
                 .getReference("Driveon")

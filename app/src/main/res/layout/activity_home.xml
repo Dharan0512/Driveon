@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/bg"
     android:orientation="vertical">
 
     <androidx.core.widget.NestedScrollView
@@ -43,7 +43,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Loading..."
-                        android:textColor="#000000"
+                        android:textColor="@color/text_primary"
                         android:fontFamily="sans-serif-condensed"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -54,7 +54,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:text=""
-                        android:textColor="#757575"
+                        android:textColor="@color/text_secondary"
                         android:textSize="12sp"
                         android:fontFamily="sans-serif-medium" />
 
@@ -65,7 +65,7 @@
                     android:layout_height="50dp"
                     android:padding="10dp"
                     android:src="@drawable/writtenlogo"
-                    app:tint="#000000" />
+                    app:tint="@color/brand" />
 
             </LinearLayout>
 
@@ -93,7 +93,7 @@
                         android:id="@+id/homeBanner"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#FDD104"
+                        android:background="@color/brand"
                         android:scaleType="centerCrop"
                         android:src="@drawable/riderbaddie" />
 
@@ -111,7 +111,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="NEED A BIKE TODAY?"
-                            android:textColor="#FFFFFF"
+                            android:textColor="@color/white"
                             android:textSize="26sp"
                             android:textStyle="bold" />
 
@@ -120,7 +120,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:text="Book scooters, sports bikes and tourers instantly."
-                            android:textColor="#FFFFFF"
+                            android:textColor="@color/white"
                             android:textSize="14sp" />
 
                         <TextView
@@ -133,7 +133,7 @@
                             android:paddingEnd="24dp"
                             android:paddingBottom="12dp"
                             android:text="BOOK VEHICLE"
-                            android:textColor="#000000"
+                            android:textColor="@color/on_brand"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -158,7 +158,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FDD104"
+                    android:background="@color/brand"
                     android:orientation="vertical"
                     android:padding="20dp">
 
@@ -166,7 +166,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ACTIVE BOOKING"
-                        android:textColor="#000000"
+                        android:textColor="@color/on_brand"
                         android:textSize="18sp"
                         android:textStyle="bold"/>
 
@@ -175,12 +175,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:textColor="@color/on_brand"
                         android:text="Vehicle"/>
 
                     <TextView
                         android:id="@+id/txtActiveDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/on_brand_muted"
                         android:text="Date"/>
 
                 </LinearLayout>
@@ -195,7 +197,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="12dp"
                 android:text="What's More ??"
-                android:textColor="#000000"
+                android:textColor="@color/text_primary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

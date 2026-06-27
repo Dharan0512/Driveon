@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bordered secondary CTA: dark surface face wrapped in a hazard yellow outline. -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/brand_wash_strong">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/surface_alt" />
+            <corners android:radius="14dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/brand" />
+        </shape>
+    </item>
+</ripple>

@@ -2,4 +2,46 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- ============================================================= -->
+    <!--  DRIVEON · HAZARD THEME  (Vibrant Yellow / Ink Black / White) -->
+    <!-- ============================================================= -->
+
+    <!-- Core Brand: Hazard Yellow -->
+    <color name="brand">#FACC15</color>        <!-- Vibrant warning yellow -->
+    <color name="brand_light">#FEF08A</color>  <!-- Light hazard yellow     -->
+    <color name="brand_dark">#CA8A04</color>   <!-- Dark amber gold         -->
+    <color name="brand_amber">#D97706</color>  <!-- Muted deep amber accent -->
+
+    <!-- Translucent brand washes (chips / glows on black) -->
+    <color name="brand_wash">#1AFACC15</color>     <!-- 10% yellow fill   -->
+    <color name="brand_wash_strong">#26FACC15</color> <!-- 15% yellow ripple -->
+    <color name="brand_stroke">#4DFACC15</color>   <!-- 30% yellow stroke -->
+
+    <!-- Dark Mode Base -->
+    <color name="bg">#09090B</color>           <!-- Deep pitch black       -->
+    <color name="surface">#18181B</color>      <!-- Charcoal card surface   -->
+    <color name="surface_alt">#121214</color>  <!-- Deeper charcoal tile     -->
+    <color name="divider">#27272A</color>      <!-- Industrial gray border  -->
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFF</color>   <!-- Stark white            -->
+    <color name="text_secondary">#A1A1AA</color> <!-- Zinc gray              -->
+    <color name="text_tertiary">#71717A</color>  <!-- Muted gray             -->
+
+    <!-- Text on dark surfaces (legacy aliases, kept for compatibility) -->
+    <color name="on_dark">#FFFFFF</color>
+    <color name="on_dark_muted">#A1A1AA</color>
+
+    <!-- Text on yellow -->
+    <color name="on_brand">#000000</color>       <!-- Pitch black on yellow  -->
+    <color name="on_brand_muted">#3F2D00</color> <!-- Muted ink on yellow    -->
+
+    <!-- Ink (deep black, used by tiles/pills) -->
+    <color name="ink">#0A0A0C</color>
+
+    <!-- Status & Alerts -->
+    <color name="success">#22C55E</color>          <!-- Neon green (approved) -->
+    <color name="success_wash">#1A22C55E</color>   <!-- 10% green fill        -->
+    <color name="success_stroke">#4022C55E</color> <!-- 25% green stroke      -->
 </resources>

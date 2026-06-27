@@ -1,387 +1,731 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ===================================================================== -->
+<!--  DRIVEON · VEHICLE MANAGEMENT  ·  HAZARD THEME                         -->
+<!--  Ink Black · Hazard Yellow · Stark White · Industrial dashboard       -->
+<!-- ===================================================================== -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- HEADER -->
+        <!-- ============================================================= -->
+        <!--  HAZARD HEADER                                                -->
+        <!-- ============================================================= -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:background="#FDD104"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_height="wrap_content"
+            android:background="@color/brand"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Vehicle Management"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingTop="22dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="22dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add and manage Fleet"/>
+                <!-- Styled back button -->
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_btn_back"
+                    android:clickable="true"
+                    android:contentDescription="Back"
+                    android:focusable="true"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back"
+                    app:tint="@color/brand" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.02"
+                        android:text="VEHICLE MANAGEMENT"
+                        android:textColor="@color/on_brand"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:letterSpacing="0.03"
+                        android:text="Add and manage Fleet"
+                        android:textColor="@color/on_brand_muted"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Hazard caution stripe under the header -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/ink"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_hazard_stripes" />
         </LinearLayout>
 
-        <!-- EVERYTHING ELSE -->
+        <!-- ============================================================= -->
+        <!--  BODY                                                         -->
+        <!-- ============================================================= -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Total Vehicles Card -->
-
-            <com.google.android.material.card.MaterialCardView
+            <!-- ========================================================= -->
+            <!--  CONTROL PANEL  ·  Stats + primary action                 -->
+            <!-- ========================================================= -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="16dp">
+                android:background="@drawable/bg_hazard_card"
+                android:orientation="vertical"
+                android:padding="18dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.18"
+                    android:text="CONTROL PANEL"
+                    android:textColor="@color/text_tertiary"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <!-- Total Vehicles stat -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_input_field"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_plan_badge"
+                        android:contentDescription="@null"
+                        android:padding="9dp"
+                        android:src="@drawable/ic_motorbike"
+                        app:tint="@color/on_brand" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="TOTAL VEHICLES"
-                        android:textStyle="bold"/>
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tvVehicleCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="0"
-                        android:textColor="#FDD104"
-                        android:textSize="36sp"
-                        android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.14"
+                            android:text="TOTAL VEHICLES"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
 
+                        <TextView
+                            android:id="@+id/tvVehicleCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-black"
+                            android:text="0"
+                            android:textColor="@color/brand"
+                            android:textSize="34sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/ic_dot_success" />
                 </LinearLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+                <!-- Manage Vehicles · bordered CTA -->
+                <Button
+                    android:id="@+id/btnManageVehicles"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_btn_outline"
+                    android:drawableStart="@drawable/ic_people"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:letterSpacing="0.08"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:stateListAnimator="@null"
+                    android:text="MANAGE VEHICLES"
+                    android:textAllCaps="true"
+                    android:textColor="@color/brand"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:drawableTint="@color/brand" />
+            </LinearLayout>
 
-            <!-- Manage Vehicles Button -->
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnManageVehicles"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="12dp"
-                android:text="MANAGE VEHICLES"
-                android:textStyle="bold"
-                app:backgroundTint="#000000"
-                android:textColor="#FFFFFF"/>
+            <!-- ========================================================= -->
+            <!--  SECTION · VEHICLE DETAILS                                 -->
+            <!-- ========================================================= -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:letterSpacing="0.14"
+                android:text="VEHICLE DETAILS"
+                android:textColor="@color/brand"
+                android:textSize="13sp"
+                android:textStyle="bold" />
 
             <!-- Bike Name -->
-
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="12dp"
                 android:hint="Bike Name"
-                app:boxStrokeColor="#FDD104"
-                app:boxCornerRadiusTopStart="20dp"
-                app:boxCornerRadiusTopEnd="20dp"
-                app:boxCornerRadiusBottomStart="20dp"
-                app:boxCornerRadiusBottomEnd="20dp">
+                android:textColorHint="@color/text_secondary"
+                app:boxBackgroundColor="@color/surface_alt"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="@color/brand"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:hintTextColor="@color/brand"
+                app:startIconDrawable="@drawable/ic_motorbike"
+                app:startIconTint="@color/brand">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etBikeName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="10dp"
-                    android:paddingVertical="16dp"/>
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/text_primary"
+                    android:textCursorDrawable="@drawable/cursor_brand" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <!-- Vehicle Number -->
-
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:hint="Vehicle Number"
-                app:boxStrokeColor="#FDD104"
-                app:boxCornerRadiusTopStart="20dp"
-                app:boxCornerRadiusTopEnd="20dp"
-                app:boxCornerRadiusBottomStart="20dp"
-                app:boxCornerRadiusBottomEnd="20dp">
+                android:textColorHint="@color/text_secondary"
+                app:boxBackgroundColor="@color/surface_alt"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="@color/brand"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:hintTextColor="@color/brand"
+                app:startIconDrawable="@drawable/ic_plate"
+                app:startIconTint="@color/brand">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etVehicleNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
                     android:inputType="textCapCharacters"
                     android:maxLines="1"
-                    android:drawablePadding="10dp"
-                    android:paddingVertical="16dp"/>
-
+                    android:paddingVertical="16dp"
+                    android:textColor="@color/text_primary"
+                    android:textCursorDrawable="@drawable/cursor_brand" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Rental Packages -->
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="Rental Packages"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#000000" />
-
-            <!-- Header -->
-
+            <!-- ========================================================= -->
+            <!--  SECTION · RENTAL PACKAGES                                 -->
+            <!-- ========================================================= -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:background="#FDD104"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:text="Package"
-                    android:textStyle="bold" />
+                android:layout_marginTop="28dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Rent"
+                    android:letterSpacing="0.14"
+                    android:text="RENTAL PACKAGES"
+                    android:textColor="@color/brand"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="KMS\nLimit"
+                    android:text="4 PLANS"
+                    android:textColor="@color/text_tertiary"
+                    android:textSize="11sp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Additional Per\nKM Charges"
-                    android:textStyle="bold" />
-
             </LinearLayout>
 
-            <!-- 1 Day -->
-
+            <!-- ================= 1 DAY PLAN ================= -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="6dp"
-                android:gravity="center_vertical">
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_hazard_card"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <TextView
-                    android:layout_width="70dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1 Day"
-                    android:textStyle="bold" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/etDay1Price"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:hint="Rent"
-                    android:inputType="number" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_plan_badge"
+                        android:minWidth="34dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:text="1"
+                        android:textColor="@color/on_brand"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
 
-                <EditText
-                    android:id="@+id/etDay1Km"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:hint="KM Limit"
-                    android:inputType="number" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.06"
+                        android:text="1 DAY PLAN"
+                        android:textColor="@color/brand"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/etDay1Extra"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:hint="Extra KMS"
-                    android:textSize="16sp"
-                    android:inputType="numberDecimal" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
 
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="RENT (₹)" />
+
+                        <EditText
+                            android:id="@+id/etDay1Price"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="LIMIT (KM)" />
+
+                        <EditText
+                            android:id="@+id/etDay1Km"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="EXTRA (₹/KM)" />
+
+                        <EditText
+                            android:id="@+id/etDay1Extra"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- 2 Day -->
-
+            <!-- ================= 2 DAY PLAN ================= -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="6dp"
-                android:gravity="center_vertical">
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_hazard_card"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <TextView
-                    android:layout_width="70dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2 Days"
-                    android:textStyle="bold" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/etDay2Price"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:textSize="16sp"
-                    android:hint="Rent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:inputType="number" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_plan_badge"
+                        android:minWidth="34dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:text="2"
+                        android:textColor="@color/on_brand"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
 
-                <EditText
-                    android:id="@+id/etDay2Km"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:hint="KM Limit"
-                    android:gravity="center"
-                    android:inputType="number" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.06"
+                        android:text="2 DAYS PLAN"
+                        android:textColor="@color/brand"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/etDay2Extra"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:hint="Extra KMS"
-                    android:textSize="16sp"
-                    android:gravity="center"
-                    android:inputType="numberDecimal" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
 
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="RENT (₹)" />
+
+                        <EditText
+                            android:id="@+id/etDay2Price"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="LIMIT (KM)" />
+
+                        <EditText
+                            android:id="@+id/etDay2Km"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="EXTRA (₹/KM)" />
+
+                        <EditText
+                            android:id="@+id/etDay2Extra"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- 7 Day -->
-
+            <!-- ================= 7 DAY PLAN ================= -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="6dp"
-                android:gravity="center_vertical">
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_hazard_card"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <TextView
-                    android:layout_width="70dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="7 Days"
-                    android:textStyle="bold" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/etDay7Price"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:textSize="16sp"
-                    android:hint="Rent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:inputType="number" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_plan_badge"
+                        android:minWidth="34dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:text="7"
+                        android:textColor="@color/on_brand"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
 
-                <EditText
-                    android:id="@+id/etDay7Km"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:textSize="16sp"
-                    android:hint="KM Limit"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:inputType="number" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.06"
+                        android:text="7 DAYS PLAN"
+                        android:textColor="@color/brand"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/etDay7Extra"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:hint="Extra KMS"
-                    android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:inputType="numberDecimal" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
 
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="RENT (₹)" />
+
+                        <EditText
+                            android:id="@+id/etDay7Price"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="LIMIT (KM)" />
+
+                        <EditText
+                            android:id="@+id/etDay7Km"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="EXTRA (₹/KM)" />
+
+                        <EditText
+                            android:id="@+id/etDay7Extra"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- 30 Day -->
-
+            <!-- ================= 30 DAY PLAN ================= -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="6dp"
-                android:gravity="center_vertical">
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_hazard_card"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <TextView
-                    android:layout_width="70dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="30 Days"
-                    android:textStyle="bold" />
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/etDay30Price"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:textSize="16sp"
-                    android:hint="Rent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:inputType="number" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_plan_badge"
+                        android:minWidth="34dp"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="5dp"
+                        android:text="30"
+                        android:textColor="@color/on_brand"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
 
-                <EditText
-                    android:id="@+id/etDay30Km"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:textSize="16sp"
-                    android:hint="KM Limit"
-                    android:gravity="center"
-                    android:inputType="number" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.06"
+                        android:text="30 DAYS PLAN"
+                        android:textColor="@color/brand"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/etDay30Extra"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:hint="Extra KMS"
-                    android:textSize="16sp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:inputType="numberDecimal" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
 
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="RENT (₹)" />
+
+                        <EditText
+                            android:id="@+id/etDay30Price"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="LIMIT (KM)" />
+
+                        <EditText
+                            android:id="@+id/etDay30Km"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/PlanFieldLabel"
+                            android:text="EXTRA (₹/KM)" />
+
+                        <EditText
+                            android:id="@+id/etDay30Extra"
+                            style="@style/PlanFieldInput"
+                            android:hint="0"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- Add Vehicle Button -->
-
-            <com.google.android.material.button.MaterialButton
+            <!-- ========================================================= -->
+            <!--  PRIMARY ACTION · ADD VEHICLE                             -->
+            <!-- ========================================================= -->
+            <Button
                 android:id="@+id/btnAddVehicle"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:textColor="#000000"
-                android:layout_marginTop="20dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_btn_neo"
+                android:drawableStart="@drawable/ic_motorbike"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:letterSpacing="0.1"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:stateListAnimator="@null"
                 android:text="ADD VEHICLE"
+                android:textColor="@color/on_brand"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                app:backgroundTint="#FDD104"/>
+                app:drawableTint="@color/on_brand" />
 
             <ImageView
                 android:id="@+id/imgSuccess"
@@ -389,11 +733,11 @@
                 android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="Vehicle added"
                 android:src="@android:drawable/checkbox_on_background"
-                android:visibility="gone"/>
-
+                android:visibility="gone"
+                app:tint="@color/success" />
         </LinearLayout>
-
     </LinearLayout>
-
 </ScrollView>
