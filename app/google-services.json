@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "204536409023",
+    "firebase_url": "https://driveon-f0424-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "driveon-f0424",
+    "storage_bucket": "driveon-f0424.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204536409023:android:5030ec278d7d2e0fb4cf0a",
+        "android_client_info": {
+          "package_name": "com.revon.driveon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204536409023-9b0seab1m00e6vi6iri356vv9a8pdal3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.revon.driveon",
+            "certificate_hash": "d8caa462560baa7d99c63971cf24aeb47f3fb657"
+          }
+        },
+        {
+          "client_id": "204536409023-cjjsmf34uh1mr7olsotn6ad1dj3d29go.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvXnh7d9W7t-zP15YojzZTHytXSs6_cvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204536409023-cjjsmf34uh1mr7olsotn6ad1dj3d29go.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

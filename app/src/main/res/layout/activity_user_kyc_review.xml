@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txtPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone"/>
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"/>
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"/>
+
+        <Button
+            android:id="@+id/btnViewLicenseFront"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW LICENSE FRONT"/>
+
+        <Button
+            android:id="@+id/btnViewLicenseBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW LICENSE BACK"/>
+
+        <Button
+            android:id="@+id/btnViewAadhaarFront"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW AADHAAR FRONT"/>
+
+        <Button
+            android:id="@+id/btnViewAadhaarBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW AADHAAR BACK"/>
+
+        <EditText
+            android:id="@+id/etRejectReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Reason for rejection"/>
+
+        <Button
+            android:id="@+id/btnApprove"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="APPROVE USER"/>
+
+        <Button
+            android:id="@+id/btnReject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REJECT USER"/>
+
+    </LinearLayout>
+
+</ScrollView>
