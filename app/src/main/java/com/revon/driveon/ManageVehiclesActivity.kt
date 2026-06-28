@@ -10,7 +10,6 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
-import com.google.android.material.textfield.TextInputEditText
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
@@ -19,7 +18,7 @@ class ManageVehiclesActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var database: DatabaseReference
 
-    private lateinit var etSearch: TextInputEditText
+    private lateinit var etSearch: android.widget.EditText
 
     private val allVehicles = ArrayList<Vehicle>()
 
@@ -43,6 +42,13 @@ class ManageVehiclesActivity : AppCompatActivity() {
 
         layoutEmpty = findViewById(R.id.layoutEmpty)
 
+        findViewById<ImageView>(R.id.btnBack).setOnClickListener { finish() }
+
+        val btnClearSearch: ImageView = findViewById(R.id.btnClearSearch)
+        btnClearSearch.setOnClickListener {
+            etSearch.setText("")
+        }
+
         etSearch.addTextChangedListener(object : TextWatcher {
 
             override fun beforeTextChanged(
@@ -59,7 +65,7 @@ class ManageVehiclesActivity : AppCompatActivity() {
                 before: Int,
                 count: Int
             ) {
-
+                btnClearSearch.visibility = if (s.isNullOrEmpty()) View.GONE else View.VISIBLE
                 filterVehicles(s.toString())
             }
 
@@ -112,8 +118,7 @@ class ManageVehiclesActivity : AppCompatActivity() {
                         }
                     }
 
-                    txtVehicleCount.text =
-                        "Total Vehicle Count : ${vehicleList.size}"
+                    txtVehicleCount.text = vehicleList.size.toString()
 
                         recyclerView.adapter =
                         VehicleAdapter(

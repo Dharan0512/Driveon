@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="12dp"
+    android:layout_marginHorizontal="16dp"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
-    app:cardCornerRadius="18dp"
-    app:cardElevation="4dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="0dp"
     app:cardBackgroundColor="@color/surface"
     app:strokeColor="@color/divider"
     app:strokeWidth="1dp">
@@ -18,8 +18,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- Left yellow accent -->
-
+        <!-- Left yellow accent line -->
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="@color/brand" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,71 +30,74 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Top row -->
+            <!-- Top Row: Bike Name & Status -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvBikeName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvBikeName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Yamaha R15"
-                        android:textColor="@color/text_primary"
-                        android:textSize="19sp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
+                    android:text="Yamaha R15"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
 
                 <TextView
                     android:id="@+id/tvStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/brand_wash"
-                    android:paddingStart="12dp"
-                    android:paddingTop="6dp"
-                    android:paddingEnd="12dp"
-                    android:paddingBottom="6dp"
+                    android:background="@drawable/bg_status"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
                     android:text="Available"
-                    android:textColor="@color/brand"
-                    android:textSize="12sp"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/success"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
-            <!-- Vehicle number -->
+            <!-- Vehicle registration number -->
             <TextView
                 android:id="@+id/tvVehicleNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="4dp"
                 android:text="TN07 AB 1234"
                 android:textColor="@color/text_secondary"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/divider" />
 
             <!-- Price title -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="12dp"
                 android:text="Rental Packages"
-                android:textColor="@color/text_primary"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02" />
 
-            <!-- Price boxes -->
+            <!-- Price grid boxes -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 android:weightSum="4">
 
@@ -101,37 +107,37 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginEnd="4dp"
-                    android:background="@color/brand_wash"
+                    android:background="@drawable/bg_package_box"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1D"
-                        android:textColor="@color/text_primary"
-                        android:textSize="12sp"
-                        android:textStyle="bold"/>
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv1DPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="3dp"
                         android:text="₹999"
-                        android:textColor="@color/brand"
+                        android:textColor="@color/text_primary"
                         android:textSize="13sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv1DExtraKm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="+ ₹6/km"
+                        android:layout_marginTop="1dp"
+                        android:text="+ ₹6"
                         android:textColor="@color/text_tertiary"
-                        android:textSize="11sp"/>
+                        android:textSize="10sp" />
                 </LinearLayout>
 
                 <!-- 2 Day -->
@@ -139,39 +145,38 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:background="@color/brand_wash"
+                    android:layout_marginHorizontal="2dp"
+                    android:background="@drawable/bg_package_box"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2D"
-                        android:textColor="@color/text_primary"
-                        android:textSize="12sp"
-                        android:textStyle="bold"/>
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv2DPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="3dp"
                         android:text="₹1799"
-                        android:textColor="@color/brand"
+                        android:textColor="@color/text_primary"
                         android:textSize="13sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv2DExtraKm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="+ ₹6/km"
+                        android:layout_marginTop="1dp"
+                        android:text="+ ₹6"
                         android:textColor="@color/text_tertiary"
-                        android:textSize="11sp"/>
+                        android:textSize="10sp" />
                 </LinearLayout>
 
                 <!-- 7 Day -->
@@ -179,39 +184,38 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:background="@color/brand_wash"
+                    android:layout_marginHorizontal="2dp"
+                    android:background="@drawable/bg_package_box"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="7D"
-                        android:textColor="@color/text_primary"
-                        android:textSize="12sp"
-                        android:textStyle="bold"/>
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv7DPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="3dp"
                         android:text="₹4999"
-                        android:textColor="@color/brand"
+                        android:textColor="@color/text_primary"
                         android:textSize="13sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv7DExtraKm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="+ ₹5/km"
+                        android:layout_marginTop="1dp"
+                        android:text="+ ₹5"
                         android:textColor="@color/text_tertiary"
-                        android:textSize="11sp"/>
+                        android:textSize="10sp" />
                 </LinearLayout>
 
                 <!-- 30 Day -->
@@ -220,69 +224,84 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="4dp"
-                    android:background="@color/brand_wash"
+                    android:background="@drawable/bg_package_box"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="30D"
-                        android:textColor="@color/text_primary"
-                        android:textSize="12sp"
-                        android:textStyle="bold"/>
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv30DPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="3dp"
                         android:text="₹14999"
-                        android:textColor="@color/brand"
+                        android:textColor="@color/text_primary"
                         android:textSize="13sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv30DExtraKm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="+ ₹4/km"
+                        android:layout_marginTop="1dp"
+                        android:text="+ ₹4"
                         android:textColor="@color/text_tertiary"
-                        android:textSize="11sp"/>
+                        android:textSize="10sp" />
                 </LinearLayout>
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="14dp"
+                android:background="@color/divider" />
 
             <!-- Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:gravity="end"
                 android:orientation="horizontal">
 
+                <!-- Edit Outlined Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnEdit"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="44dp"
+                    android:layout_height="40dp"
                     android:text="Edit"
                     android:textAllCaps="false"
-                    android:textColor="@color/on_brand"
-                    app:backgroundTint="@color/brand"
-                    app:cornerRadius="14dp"/>
+                    android:textColor="@color/brand"
+                    app:strokeColor="@color/brand"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="10dp"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
+                <!-- Delete Text Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnDelete"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="wrap_content"
-                    android:layout_height="44dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
                     android:text="Delete"
                     android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    app:backgroundTint="@color/danger"
-                    app:cornerRadius="14dp"/>
+                    android:textColor="@color/danger"
+                    app:cornerRadius="10dp"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
         </LinearLayout>

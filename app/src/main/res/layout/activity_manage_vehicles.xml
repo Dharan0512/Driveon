@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -7,119 +6,260 @@
     android:orientation="vertical"
     android:background="@color/bg">
 
-    <!-- Header -->
-
+    <!-- ===================== HEADER ===================== -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg_header"
-        android:gravity="center_vertical"
         android:orientation="vertical"
-        android:padding="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Manage Vehicles"
-            android:textColor="@color/text_primary"
-            android:textSize="26sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="View, Search &amp; Delete Vehicles"
-            android:textColor="@color/text_secondary"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-    <!-- Search Card -->
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:paddingHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_height="wrap_content"
-        app:hintEnabled="false"
-        app:startIconDrawable="@android:drawable/ic_menu_search">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search Vehicle"
-            android:textColor="@color/text_primary"
-            android:textColorHint="@color/text_tertiary"
-            android:textCursorDrawable="@drawable/cursor_brand"
-            android:minHeight="48dp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Vehicle Count -->
-
-    <TextView
-        android:id="@+id/txtVehicleCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:background="@color/brand"
-        android:paddingHorizontal="14dp"
-        android:paddingVertical="8dp"
-        android:text="Total Vehicle Count : 0"
-        android:textColor="@color/on_brand"
-        android:textSize="15sp"
-        android:textStyle="bold"/>
-
-    <!-- Empty State -->
-
-    <LinearLayout
-        android:id="@+id/layoutEmpty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingTop="60dp"
-        android:visibility="gone">
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="20dp">
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:alpha="0.4"
-            android:src="@android:drawable/ic_menu_agenda"/>
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="-8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/brand"
+            android:contentDescription="Back" />
 
-        <TextView
+        <!-- Title with hazard accent bar -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="No Vehicles Added Yet"
-            android:textColor="@color/text_primary"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="12dp"
+                android:background="@color/brand" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MANAGE VEHICLES"
+                android:textColor="@color/text_primary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.01" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
             android:layout_marginTop="4dp"
-            android:text="Add vehicles to start managing them"
+            android:text="View, Search &amp; Delete Vehicles"
             android:textColor="@color/text_secondary"
-            android:textSize="14sp"/>
+            android:textSize="13sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
-    <!-- Vehicle List -->
+    <!-- Hazard caution strip -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:background="@color/bg"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_hazard_stripes"
+        android:contentDescription="@null" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerVehicles"
+    <!-- ===================== SEARCH ===================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="18dp"
+        android:addStatesFromChildren="true"
+        android:background="@drawable/bg_search"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="8dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_search"
+            app:tint="@color/text_tertiary" />
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:hint="Search Vehicle"
+            android:textColorHint="@color/text_tertiary"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            android:textCursorDrawable="@drawable/cursor_brand"
+            android:inputType="text"
+            android:maxLines="1"
+            android:imeOptions="actionSearch" />
+
+        <ImageView
+            android:id="@+id/btnClearSearch"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/text_secondary"
+            android:visibility="gone"
+            android:contentDescription="Clear search" />
+
+    </LinearLayout>
+
+    <!-- ===================== SUMMARY STAT CARD ===================== -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="14dp"
+        app:cardBackgroundColor="@color/surface"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/divider"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp">
+
+            <FrameLayout
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/bg_icon_tile">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_motorbike"
+                    app:tint="@color/brand" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fleet Size"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total registered vehicles"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtVehicleCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_pill_count"
+                android:minWidth="40dp"
+                android:gravity="center"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:text="0"
+                android:textColor="@color/brand"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="20dp" />
+        android:layout_weight="1">
+
+        <!-- Vehicle List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerVehicles"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="4dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="20dp" />
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/layoutEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/bg_icon_tile">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_motorbike"
+                    app:tint="@color/brand" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="No vehicles found"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Add vehicles to start managing them"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
 </LinearLayout>

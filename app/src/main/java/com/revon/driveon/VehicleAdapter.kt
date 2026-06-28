@@ -1,7 +1,6 @@
 package com.revon.driveon
 
 import android.content.Intent
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -101,25 +100,30 @@ class VehicleAdapter(
     }
 
     private fun setStatusStyle(statusView: TextView, statusText: String) {
+        val context = statusView.context
         when (statusText.trim().lowercase()) {
             "available" -> {
-                statusView.setBackgroundColor(Color.parseColor("#E8F5E9"))
-                statusView.setTextColor(Color.parseColor("#2E7D32"))
+                statusView.setBackgroundResource(R.drawable.bg_status)
+                statusView.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.success))
+                statusView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_dot_success, 0, 0, 0)
             }
 
             "booked" -> {
-                statusView.setBackgroundColor(Color.parseColor("#FFEBEE"))
-                statusView.setTextColor(Color.parseColor("#C62828"))
+                statusView.setBackgroundResource(R.drawable.bg_status_rejected)
+                statusView.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.danger))
+                statusView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_dot_rejected, 0, 0, 0)
             }
 
             "service" -> {
-                statusView.setBackgroundColor(Color.parseColor("#FFF3E0"))
-                statusView.setTextColor(Color.parseColor("#EF6C00"))
+                statusView.setBackgroundResource(R.drawable.bg_status_pending)
+                statusView.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.brand))
+                statusView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_dot_pending, 0, 0, 0)
             }
 
             else -> {
-                statusView.setBackgroundColor(Color.parseColor("#EEEEEE"))
-                statusView.setTextColor(Color.parseColor("#444444"))
+                statusView.setBackgroundResource(R.drawable.bg_status_pending)
+                statusView.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.brand))
+                statusView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_dot_pending, 0, 0, 0)
             }
         }
     }
