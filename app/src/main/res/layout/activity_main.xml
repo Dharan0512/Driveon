@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
+    android:background="@color/bg"
     android:gravity="center">
 
     <!-- TITLE -->
@@ -24,6 +25,7 @@
         android:text="Revon"
         android:textSize="28sp"
         android:textStyle="bold"
+        android:textColor="@color/text_primary"
         android:layout_marginBottom="20dp"/>
 
     <!-- PHONE -->
@@ -34,6 +36,9 @@
         android:hint="Phone Number"
         android:inputType="phone"
         android:padding="12dp"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_tertiary"
+        android:textCursorDrawable="@drawable/cursor_brand"
         android:layout_marginBottom="12dp"/>
 
     <!-- PASSWORD -->
@@ -44,6 +49,9 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="12dp"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/text_tertiary"
+        android:textCursorDrawable="@drawable/cursor_brand"
         android:layout_marginBottom="16dp"/>
 
     <!-- LOGIN BUTTON -->
@@ -68,6 +76,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot Password?"
-        android:textColor="#0000FF"
+        android:textColor="@color/brand"
         android:layout_marginTop="10dp"/>
 </LinearLayout>

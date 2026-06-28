@@ -12,7 +12,7 @@
     <View
         android:layout_width="5dp"
         android:layout_height="22dp"
-        android:background="#FDD104"/>
+        android:background="@color/brand"/>
 
     <TextView
         android:id="@+id/txtDateHeader"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="TODAY (5 Users)"
-        android:textColor="#222222"
+        android:textColor="@color/text_primary"
         android:textSize="16sp"
         android:textStyle="bold"/>
 

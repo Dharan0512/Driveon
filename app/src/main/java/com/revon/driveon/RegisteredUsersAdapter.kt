@@ -128,11 +128,30 @@ class RegisteredUsersAdapter(
                         R.id.btnCall
                     )
 
-                txtName.text = user.name
+                                txtName.text = user.name
 
                 txtPhone.text = user.phone
 
                 txtStatus.text = user.status
+
+                val context = holder.itemView.context
+                when (user.status.lowercase()) {
+                    "pending" -> {
+                        txtStatus.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.brand))
+                        txtStatus.setBackgroundResource(R.drawable.bg_status_pending)
+                        txtStatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_dot_pending, 0, 0, 0)
+                    }
+                    "rejected" -> {
+                        txtStatus.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.danger))
+                        txtStatus.setBackgroundResource(R.drawable.bg_status_rejected)
+                        txtStatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_dot_rejected, 0, 0, 0)
+                    }
+                    else -> {
+                        txtStatus.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.success))
+                        txtStatus.setBackgroundResource(R.drawable.bg_status)
+                        txtStatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_dot_success, 0, 0, 0)
+                    }
+                }
 
                 if(user.name.isNotEmpty()){
 

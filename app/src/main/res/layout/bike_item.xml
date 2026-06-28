@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/surface"
+    app:strokeColor="@color/divider"
+    app:strokeWidth="1dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="6dp">
 
@@ -22,7 +25,7 @@
             android:text="Bike Name"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#111111" />
+            android:textColor="@color/text_primary" />
 
         <!-- Category -->
         <TextView
@@ -31,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="Sport"
             android:textSize="14sp"
-            android:textColor="#777777"
+            android:textColor="@color/text_secondary"
             android:layout_marginTop="4dp" />
 
         <!-- Rent Row -->
@@ -46,14 +49,14 @@
                 android:layout_height="wrap_content"
                 android:text="Rent: "
                 android:textStyle="bold"
-                android:textColor="#000000"/>
+                android:textColor="@color/text_secondary"/>
 
             <TextView
                 android:id="@+id/bikeRent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="₹900/day"
-                android:textColor="#2E7D32"
+                android:textColor="@color/success"
                 android:textStyle="bold"/>
         </LinearLayout>
 
@@ -65,8 +68,8 @@
             android:text="Available"
             android:padding="6dp"
             android:textSize="12sp"
-            android:textColor="#FFFFFF"
-            android:background="#4CAF50"
+            android:textColor="@color/white"
+            android:background="@color/success"
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>

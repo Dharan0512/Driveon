@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF9F6">
+    android:background="@color/bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            android:background="#FDD104"
+            android:background="@drawable/bg_header"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:padding="20dp">
@@ -27,13 +27,13 @@
                 android:text="User Details"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                android:textColor="#000000" />
+                android:textColor="@color/text_primary" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Registered User Information"
-                android:textColor="#333333" />
+                android:textColor="@color/text_secondary" />
 
         </LinearLayout>
 
@@ -48,6 +48,9 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/surface"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
                 app:cardCornerRadius="18dp">
 
                 <LinearLayout
@@ -60,6 +63,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Profile Information"
+                        android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -68,6 +72,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
+                        android:textColor="@color/text_secondary"
                         android:text="Name : -" />
 
                     <TextView
@@ -75,6 +80,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:textColor="@color/text_secondary"
                         android:text="Email : -" />
 
                     <TextView
@@ -82,6 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:textColor="@color/text_secondary"
                         android:text="Contact Number : -" />
 
                     <TextView
@@ -89,6 +96,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:textColor="@color/text_secondary"
                         android:text="Profile Completion : -" />
 
                     <TextView
@@ -96,6 +104,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:textColor="@color/success"
+                        android:textStyle="bold"
                         android:text="KYC Status : Approved" />
 
                 </LinearLayout>
@@ -108,6 +118,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
                 app:cardCornerRadius="18dp">
 
                 <LinearLayout
@@ -120,6 +133,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Emergency Contacts"
+                        android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -128,6 +142,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
+                        android:textColor="@color/text_secondary"
                         android:text="Emergency Contact 1 : -" />
 
                     <TextView
@@ -135,6 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:textColor="@color/text_secondary"
                         android:text="Emergency Contact 2 : -" />
 
                     <TextView
@@ -142,6 +158,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:textColor="@color/text_secondary"
                         android:text="Emergency Contact 3 : -" />
 
                 </LinearLayout>
@@ -154,6 +171,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
                 app:cardCornerRadius="18dp">
 
                 <LinearLayout
@@ -166,6 +186,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Uploaded Documents"
+                        android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -174,6 +195,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/brand"
+                        android:textColor="@color/on_brand"
                         android:text="VIEW LICENSE FRONT" />
 
                     <Button
@@ -181,6 +204,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/brand"
+                        android:textColor="@color/on_brand"
                         android:text="VIEW LICENSE BACK" />
 
                     <Button
@@ -188,6 +213,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/brand"
+                        android:textColor="@color/on_brand"
                         android:text="VIEW AADHAAR FRONT" />
 
                     <Button
@@ -195,6 +222,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/brand"
+                        android:textColor="@color/on_brand"
                         android:text="VIEW AADHAAR BACK" />
 
                     <Button
@@ -202,6 +231,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/brand"
+                        android:textColor="@color/on_brand"
                         android:text="VIEW WORKING PROOF FRONT" />
 
                     <Button
@@ -209,6 +240,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/brand"
+                        android:textColor="@color/on_brand"
                         android:text="VIEW WORKING PROOF BACK" />
 
                     <Button
@@ -216,6 +249,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/brand"
+                        android:textColor="@color/on_brand"
                         android:text="VIEW RESIDENTIAL PROOF" />
 
                     <Button
@@ -223,6 +258,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/brand"
+                        android:textColor="@color/on_brand"
                         android:text="VIEW OTHER DOCUMENT" />
 
                 </LinearLayout>

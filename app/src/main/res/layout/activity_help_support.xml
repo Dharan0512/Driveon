@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="@color/bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HELP &amp; SUPPORT (APP)"
-            android:textColor="#FFD700"
+            android:textColor="@color/brand"
             android:textSize="32sp"
             android:textStyle="bold" />
 
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="We're here whenever you need assistance"
-            android:textColor="#AAAAAA"
+            android:textColor="@color/text_secondary"
             android:textSize="14sp" />
 
         <!-- Contact Card -->
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CONTACT SUPPORT"
-                android:textColor="#FFD700"
+                android:textColor="@color/brand"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="We're available 24/7"
-                android:textColor="#AAAAAA"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
             <!-- Divider -->
@@ -58,7 +58,7 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:background="#2A2A2A"/>
+                android:background="@color/divider"/>
 
             <!-- Official Contact -->
             <LinearLayout
@@ -84,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Official Contact"
-                        android:textColor="#FFD700"
+                        android:textColor="@color/brand"
                         android:textSize="16sp"/>
 
                     <TextView
@@ -92,7 +92,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Loading..."
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/text_primary"
                         android:textSize="15sp"
                         android:textStyle="bold"/>
                 </LinearLayout>
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginVertical="15dp"
-                android:background="#2A2A2A"/>
+                android:background="@color/divider"/>
 
             <!-- Support Team -->
             <LinearLayout
@@ -129,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Support Team"
-                        android:textColor="#FFD700"
+                        android:textColor="@color/brand"
                         android:textSize="16sp"/>
 
                     <TextView
@@ -137,7 +137,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Loading..."
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/text_primary"
                         android:textSize="15sp"
                         android:textStyle="bold"/>
                 </LinearLayout>
@@ -148,7 +148,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginVertical="15dp"
-                android:background="#2A2A2A"/>
+                android:background="@color/divider"/>
 
             <!-- Email -->
             <LinearLayout
@@ -174,7 +174,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Email"
-                        android:textColor="#FFD700"
+                        android:textColor="@color/brand"
                         android:textSize="12sp"/>
 
                     <TextView
@@ -182,14 +182,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Loading..."
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/text_primary"
                         android:textSize="16sp"/>
                 </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
-        ```
 
 
         <!-- Buttons -->
@@ -198,11 +197,11 @@
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:layout_marginTop="24dp"
-            android:backgroundTint="#1F1F1F"
+            android:backgroundTint="@color/surface"
             android:elevation="8dp"
             android:text="📞 CALL SUPPORT"
             android:textAllCaps="false"
-            android:textColor="#FFD700"
+            android:textColor="@color/brand"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -216,7 +215,7 @@
             android:backgroundTint="#25D366"
             android:text="WhatsApp Support"
             android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -226,7 +225,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
             android:text="RENT • REV • RIDE"
-            android:textColor="#666666"
+            android:textColor="@color/text_tertiary"
             android:textSize="14sp"
             android:textStyle="bold" />
 

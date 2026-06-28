@@ -41,6 +41,9 @@
     <color name="ink">#0A0A0C</color>
 
     <!-- Status & Alerts -->
+    <color name="danger">#EF4444</color>           <!-- Alert red (delete/reject) -->
+    <color name="danger_wash">#1AEF4444</color>    <!-- 10% red fill          -->
+    <color name="danger_stroke">#40EF4444</color>  <!-- 25% red stroke        -->
     <color name="success">#22C55E</color>          <!-- Neon green (approved) -->
     <color name="success_wash">#1A22C55E</color>   <!-- 10% green fill        -->
     <color name="success_stroke">#4022C55E</color> <!-- 25% green stroke      -->

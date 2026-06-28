@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     android:fillViewport="true">
 
     <LinearLayout
@@ -15,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="140dp"
-            android:background="#FDD104"
+            android:background="@drawable/bg_header"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:padding="20dp">
@@ -24,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Homepage Posts"
-                android:textColor="#000000"
+                android:textColor="@color/text_primary"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -32,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Create offers, updates and announcements"
-                android:textColor="#000000"
+                android:textColor="@color/text_secondary"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -50,6 +51,9 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/surface"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="6dp">
 
@@ -63,6 +67,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Create New Post"
+                        android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -78,11 +83,13 @@
                         app:boxCornerRadiusBottomStart="18dp"
                         app:boxCornerRadiusTopEnd="18dp"
                         app:boxCornerRadiusTopStart="18dp"
-                        app:boxStrokeColor="#FDD104">
+                        app:boxStrokeColor="@color/brand"
+                        app:hintTextColor="@color/brand">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etTitle"
                             android:layout_width="match_parent"
+                            android:textColor="@color/text_primary"
                             android:layout_height="wrap_content" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +104,8 @@
                         android:clickable="true"
                         android:focusable="true"
                         app:cardCornerRadius="18dp"
-                        app:strokeColor="#FDD104"
+                        app:cardBackgroundColor="@color/surface_alt"
+                        app:strokeColor="@color/brand"
                         app:strokeWidth="2dp">
 
                         <FrameLayout
@@ -132,6 +140,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="10dp"
                                     android:text="Tap To Select Image"
+                                    android:textColor="@color/text_primary"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
 
@@ -139,6 +148,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Recommended size: Banner Image"
+                                    android:textColor="@color/text_secondary"
                                     android:textSize="12sp" />
 
                             </LinearLayout>
@@ -159,13 +169,15 @@
                         app:boxCornerRadiusBottomStart="18dp"
                         app:boxCornerRadiusTopEnd="18dp"
                         app:boxCornerRadiusTopStart="18dp"
-                        app:boxStrokeColor="#FDD104">
+                        app:boxStrokeColor="@color/brand"
+                        app:hintTextColor="@color/brand">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etDescription"
                             android:layout_width="match_parent"
                             android:layout_height="120dp"
                             android:gravity="top"
+                            android:textColor="@color/text_primary"
                             android:inputType="textMultiLine" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -179,10 +191,10 @@
                         android:layout_marginTop="18dp"
                         android:text="PUBLISH POST"
                         android:textAllCaps="true"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/on_brand"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        app:backgroundTint="#000000"
+                        app:backgroundTint="@color/brand"
                         app:cornerRadius="14dp" />
 
                 </LinearLayout>
@@ -197,12 +209,16 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="10dp"
                 android:text="Published Posts"
+                android:textColor="@color/text_primary"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="450dp"
+                app:cardBackgroundColor="@color/surface"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="4dp">
 
@@ -210,7 +226,7 @@
                     android:id="@+id/postsListView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:divider="#EEEEEE"
+                    android:divider="@color/divider"
                     android:dividerHeight="1dp" />
 
             </com.google.android.material.card.MaterialCardView>
