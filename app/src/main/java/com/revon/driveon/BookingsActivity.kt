@@ -2,7 +2,7 @@ package com.revon.driveon
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 class BookingsActivity : AppCompatActivity() {
@@ -12,7 +12,7 @@ class BookingsActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_bookings)
 
-        findViewById<Button>(R.id.btnActiveBookings)
+        findViewById<View>(R.id.btnActiveBookings)
             .setOnClickListener {
 
                 startActivity(
@@ -23,7 +23,7 @@ class BookingsActivity : AppCompatActivity() {
                 )
             }
 
-        findViewById<Button>(R.id.btnPendingBills)
+        findViewById<View>(R.id.btnPendingBills)
             .setOnClickListener {
 
                 startActivity(
@@ -34,7 +34,7 @@ class BookingsActivity : AppCompatActivity() {
                 )
             }
 
-        findViewById<Button>(R.id.btnCompletedBookings)
+        findViewById<View>(R.id.btnCompletedBookings)
             .setOnClickListener {
 
                 startActivity(

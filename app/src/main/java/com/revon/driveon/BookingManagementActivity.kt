@@ -1,34 +1,64 @@
 package com.revon.driveon
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
-class BookingManagementActivity :
-    AppCompatActivity() {
+class BookingManagementActivity : AppCompatActivity() {
 
-    override fun onCreate(
-        savedInstanceState: Bundle?
-    ) {
+    private lateinit var recycler: RecyclerView
+    private lateinit var etSearch: EditText
+    private lateinit var btnClearSearch: ImageView
+    private lateinit var txtBookingCount: TextView
+    private lateinit var emptyState: View
+
+    private lateinit var adapter: AdminBookingAdapter
+
+    private val allBookings = ArrayList<Booking>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
 
-        setContentView(
-            R.layout.activity_booking_management
-        )
+        setContentView(R.layout.activity_booking_management)
 
-        val recycler =
-            findViewById<RecyclerView>(
-                R.id.recyclerBookings
-            )
+        recycler = findViewById(R.id.recyclerBookings)
+        etSearch = findViewById(R.id.etSearch)
+        btnClearSearch = findViewById(R.id.btnClearSearch)
+        txtBookingCount = findViewById(R.id.txtBookingCount)
+        emptyState = findViewById(R.id.emptyState)
 
-        recycler.layoutManager =
-            LinearLayoutManager(this)
+        findViewById<ImageView>(R.id.btnBack)
+            .setOnClickListener { finish() }
 
-        val list =
-            ArrayList<Booking>()
+        adapter = AdminBookingAdapter(ArrayList())
+        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.adapter = adapter
+
+        btnClearSearch.setOnClickListener { etSearch.setText("") }
+
+        etSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, a: Int, b: Int, c: Int) {}
+            override fun onTextChanged(s: CharSequence?, a: Int, b: Int, c: Int) {
+                btnClearSearch.visibility =
+                    if (s.isNullOrEmpty()) View.GONE else View.VISIBLE
+                filter(s.toString())
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
+        loadBookings()
+    }
+
+    private fun loadBookings() {
 
         FirebaseDatabase.getInstance()
             .getReference("Driveon")
@@ -36,26 +66,35 @@ class BookingManagementActivity :
             .get()
             .addOnSuccessListener {
 
-                for(item in it.children){
+                allBookings.clear()
 
-                    val booking =
-                        item.getValue(
-                            Booking::class.java
-                        )
+                for (item in it.children) {
 
-                    if(
-                        booking?.status ==
-                        "PENDING_BILLING"
-                    ){
+                    val booking = item.getValue(Booking::class.java)
 
-                        booking?.let {
-                            list.add(it)
-                        }
+                    if (booking?.status == "PENDING_BILLING") {
+                        allBookings.add(booking)
                     }
                 }
 
-                recycler.adapter =
-                    AdminBookingAdapter(list)
+                filter(etSearch.text.toString())
             }
+    }
+
+    private fun filter(query: String) {
+
+        val filtered = allBookings.filter {
+            it.bikeName.contains(query, true) ||
+                it.vehicleNumber.contains(query, true) ||
+                it.userPhone.contains(query, true)
+        }
+
+        adapter.updateData(filtered)
+
+        txtBookingCount.text = filtered.size.toString()
+
+        val isEmpty = filtered.isEmpty()
+        emptyState.visibility = if (isEmpty) View.VISIBLE else View.GONE
+        recycler.visibility = if (isEmpty) View.GONE else View.VISIBLE
     }
 }

@@ -1,6 +1,7 @@
 package com.revon.driveon
 
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,17 @@ class AdminBookingAdapter(
     private val list: ArrayList<Booking>
 ) : RecyclerView.Adapter<AdminBookingAdapter.ViewHolder>() {
 
-    class ViewHolder(v: View) :
-        RecyclerView.ViewHolder(v)
+    class ViewHolder(view: View) :
+        RecyclerView.ViewHolder(view) {
+
+        val accent: View = view.findViewById(R.id.vAccent)
+        val vehicle: TextView = view.findViewById(R.id.txtVehicle)
+        val plate: TextView = view.findViewById(R.id.txtPlate)
+        val phone: TextView = view.findViewById(R.id.txtPhone)
+        val date: TextView = view.findViewById(R.id.txtDate)
+        val status: TextView = view.findViewById(R.id.txtStatus)
+        val call: View = view.findViewById(R.id.btnCall)
+    }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -22,7 +32,7 @@ class AdminBookingAdapter(
         val view =
             LayoutInflater.from(parent.context)
                 .inflate(
-                    R.layout.booking_admin_item,
+                    R.layout.booking_row,
                     parent,
                     false
                 )
@@ -37,19 +47,20 @@ class AdminBookingAdapter(
 
         val booking = list[position]
 
-        holder.itemView
-            .findViewById<TextView>(
-                R.id.txtVehicle
-            )
-            .text =
-            booking.vehicleNumber
+        BookingRowBinder.bind(holder.itemView.context, booking,
+            holder.accent, holder.vehicle, holder.plate,
+            holder.phone, holder.date, holder.status)
 
-        holder.itemView
-            .findViewById<TextView>(
-                R.id.txtStatus
-            )
-            .text =
-            booking.status
+        holder.call.setOnClickListener {
+            if (booking.userPhone.isNotBlank()) {
+                holder.itemView.context.startActivity(
+                    Intent(
+                        Intent.ACTION_DIAL,
+                        Uri.parse("tel:" + booking.userPhone)
+                    )
+                )
+            }
+        }
 
         holder.itemView.setOnClickListener {
 
@@ -69,6 +80,11 @@ class AdminBookingAdapter(
         }
     }
 
-    override fun getItemCount() =
-        list.size
+    override fun getItemCount() = list.size
+
+    fun updateData(newList: List<Booking>) {
+        list.clear()
+        list.addAll(newList)
+        notifyDataSetChanged()
+    }
 }
